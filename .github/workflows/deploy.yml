@@ -31,8 +31,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: List files
+        run: ls -la
+
       - name: Build
         run: npm run build
+
+      - name: List dist files
+        run: ls -la dist/ || echo "Dist folder not found"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
