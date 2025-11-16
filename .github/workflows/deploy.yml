@@ -40,6 +40,14 @@ jobs:
       - name: List dist files
         run: ls -la dist/ || echo "Dist folder not found"
 
+      - name: Verify index.html
+        run: |
+          if grep -q "/src/main.jsx" dist/index.html; then
+            echo "ERROR: index.html still references /src/main.jsx"
+            exit 1
+          fi
+          echo "✓ index.html is correct"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
