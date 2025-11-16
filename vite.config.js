@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     publicDir: 'public',
-    base: isProduction ? '/meu-portifolio/' : '/',
+    base: isProduction ? '/' : '/',
     server: {
       port: 3000,
       open: true
